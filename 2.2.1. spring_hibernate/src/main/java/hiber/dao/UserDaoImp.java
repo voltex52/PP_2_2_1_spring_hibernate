@@ -12,8 +12,11 @@ import java.util.List;
 @Repository
 public class UserDaoImp implements UserDao {
 
-   @Autowired
    private SessionFactory sessionFactory;
+
+   public UserDaoImp(SessionFactory sessionFactory) {
+      this.sessionFactory = sessionFactory;
+   }
 
    @Override
    public void add(User user) {
@@ -25,7 +28,6 @@ public class UserDaoImp implements UserDao {
       sessionFactory.getCurrentSession().save(user);
       sessionFactory.getCurrentSession().save(car);
       user.setCar(car);
-      car.setUser(user);
    }
 
    @Override

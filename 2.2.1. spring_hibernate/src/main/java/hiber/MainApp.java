@@ -42,8 +42,7 @@ public class MainApp {
             System.out.println();
          }
       }
-
-      System.out.println(userService.getUserByCar("Car1", 1000));
+      System.out.println("Пользователь с указанной машиной: " + userService.getUserByCar("Car1", 1000));
       System.out.println();
 
       context.close();
